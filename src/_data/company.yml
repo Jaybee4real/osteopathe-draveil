@@ -2,12 +2,9 @@
 # CONFIG
 ####################
 name: Company Name (to complete)
-phones:
-  - Phone 1 (to complete)
-  - Phone 2 (to complete)
-emails:
-  - Email 1 (to complete)
-  - Email 2 (to complete)
+phone:  01 64 97 50 43
+emails: contact@bhgroupe.fr
+address: 42 rue Paul Claudel 91000 EVRY
 website: 1 (to complete)
 lang: fr
 url:
