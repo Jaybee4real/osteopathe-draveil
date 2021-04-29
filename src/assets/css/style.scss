@@ -125,7 +125,8 @@ a {
 
 //////Slider////@at-root
 
-.slider-container {
+.slider-container,
+.header-container {
   display: flex;
   flex-direction: column;
   min-height: 700px;
@@ -177,6 +178,21 @@ a {
     }
   }
 }
+//////Slider End///
+
+////Header////
+
+.header-container {
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  background-image: url(../img/header_image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  align-items: center;
+}
 
 /////Footer///////
 
@@ -188,112 +204,218 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
 
-  .column {
-    max-width: 370px;
-    // min-height: calc(300px - 1.5rem);
-    display: flex;
-    flex-direction: column;
-    margin-right: 1rem;
+///
 
-    .socials-container {
-      margin-top: 0.5rem;
-      margin-left: 0.5rem;
+.column {
+  max-width: 370px;
+  // min-height: calc(300px - 1.5rem);
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
 
-      i {
-        padding: 0.7rem 0.75rem;
-        color: white;
-        border-radius: 50%;
-        background-color: blue;
-        margin-right: 0.5rem;
-        transition: all 0.4s ease;
+  .socials-container {
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 
-        &:hover {
-          filter: brightness(60%);
-        }
+    i {
+      padding: 0.7rem 0.75rem;
+      color: white;
+      border-radius: 50%;
+      background-color: blue;
+      margin-right: 0.5rem;
+      transition: all 0.4s ease;
+      margin-bottom: .5rem;
 
-        &.fa-facebook-f {
-          background-color: #2d5f9a;
-          padding: 0.7rem 0.9rem;
-        }
+      &:hover {
+        filter: brightness(60%);
+      }
 
-        &.fa-twitter {
-          background-color: #1da1f2;
-        }
+      &.fa-facebook-f {
+        background-color: #2d5f9a;
+        padding: 0.7rem 0.9rem;
+      }
 
-        &.fa-flickr {
-          background-color: #ff0084;
-        }
+      &.fa-twitter {
+        background-color: #1da1f2;
+      }
 
-        &.fa-pinterest {
-          background-color: #e60023;
-        }
+      &.fa-flickr {
+        background-color: #ff0084;
+      }
 
-        &.fa-instagram {
-          background-color: #dd2a7b;
-        }
+      &.fa-pinterest {
+        background-color: #e60023;
+      }
+
+      &.fa-instagram {
+        background-color: #dd2a7b;
       }
     }
+  }
 
-    .heading {
-      margin-bottom: 2rem;
-      color: grey;
-      font-size: 0.75rem;
+  .heading {
+    margin-bottom: 2rem;
+    color: grey;
+    font-size: 0.75rem;
+  }
+
+  .contact-item {
+    font-size: 0.85rem;
+    color: white;
+    margin: 0.5rem;
+
+    i {
+      margin-right: 1.5rem;
+    }
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .text {
+    margin-top: 1rem;
+    color: white;
+    font-size: 0.8rem;
+    line-height: 24px;
+  }
+
+  &.newsletter {
+    ////column that also has a newsletter-tab
+    min-width: 350px;
+    .text {
+      margin-top: 0rem !important;
+    }
+
+    input {
+      padding: 0.7rem;
+      margin-bottom: 0.7rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+
+    .newsletter-btn {
+      padding: 0.7rem;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border-radius: 3px;
+      background-color: #222;
+      color: white;
+      min-width: 100%;
+      cursor: pointer;
+      transition: all 0.4s ease;
+
+      &:hover {
+        background-color: #1ec6b6;
+      }
+    }
+  }
+}
+//////
+
+////////Sidebar//////
+.sidebar-container {
+  width: 22rem;
+  position: fixed;
+  height: 100vh;
+  background-color: white;
+  z-index: 100;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  padding-top: 6rem;
+  max-width: 80vw;
+  transition: all 0.4s ease;
+  transform: translateX(-100vw);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  i.fa-times {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    right: 1rem;
+    top: 1rem;
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background-color: #efa697;
+      box-shadow: 0 1px 30px rgba(0, 0, 0, 0.11);
+      transform: translateY(-2px);
+    }
+  }
+
+  .sidebar-item {
+    display: block;
+    font-weight: 300;
+    margin: 2.4rem 0.5rem 2.5rem 2rem;
+    font-size: 1.5rem;
+    color: grey;
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+.page-container {
+  transition: all 0.4s ease;
+
+  &.sidebar-open {
+    filter: blur(5px);
+  }
+}
+
+.sidebar-container {
+  .columns-container {
+    margin-top: 3rem;
+  }
+  .column.newsletter {
+    min-width: 100%;
+  }
+  .column {
+    margin-bottom: 2rem !important;
+    padding: 2px;
+    .text {
+      color: black;
+      margin: 0;
     }
 
     .contact-item {
-      font-size: 0.85rem;
-      color: white;
-      margin: 0.5rem;
+      color: black;
+
+      span {
+        margin-left: 1.3rem;
+        margin-top: 1rem;
+      }
 
       i {
-        margin-right: 1.5rem;
+        color: black;
+        margin-right: 0.5rem;
       }
     }
+  }
+}
 
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 400;
-    }
-
-    .text {
-      margin-top: 1rem;
-      color: white;
-      font-size: 0.8rem;
-      line-height: 24px;
-    }
-
-    &.newsletter {
-      ////column that also has a newsletter-tab
-      min-width: 350px;
-      .text {
-        margin-top: 0rem !important;
-      }
-
-      input {
-        padding: 0.7rem;
-        margin-bottom: 0.7rem;
-        margin-top: 0.5rem;
-        text-align: center;
-      }
-
-      .newsletter-btn {
-        padding: 0.7rem;
-        text-align: center;
-        font-weight: 500;
-        font-size: 0.9rem;
-        border-radius: 3px;
-        background-color: #222;
-        color: white;
-        min-width: 100%;
-        cursor: pointer;
-        transition: all 0.4s ease;
-
-        &:hover {
-          background-color: #1ec6b6;
-        }
-      }
-    }
+@media (max-width: 560px) {
+  .sidebar-container .sidebar-item {
+    font-size: 1.2rem;
   }
 }
 
