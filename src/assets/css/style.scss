@@ -340,6 +340,7 @@ a {
   padding-bottom: 0.2rem;
   color: #444;
   cursor: pointer;
+  max-width: fit-content;
 }
 
 .text {
@@ -482,3 +483,93 @@ a {
     }
   }
 }
+
+.quote-section {
+  min-height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .left-side {
+    margin-right: 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    min-width: 50%;
+    padding: 1rem;
+    color: #444;
+    font-weight: 300;
+  }
+
+  .right-side {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #444;
+  }
+}
+
+.parrallax-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .heading {
+    color: white;
+    text-align: center;
+  }
+
+  .text {
+    color: white;
+  }
+}
+
+.parrallax-section-1{
+  background-image: url(../img/parrallax-img-2.jpg);
+}
+
+.parrallax-section-2{
+  background-image: url(../img/parrallax-img-3.jpg);
+}
+
+@media (max-width: 600px) {
+  .quote-section {
+    flex-direction: column;
+  }
+}
+
+.service-section-2 {
+  display: flex;
+  flex-direction: column;
+
+  .service-board {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+
+    .left-side {
+      min-height: 350px;
+      padding: 2rem;
+      box-shadow: 0 1px 30px rgba(0, 0, 0, 0.11);
+      background-color: white;
+      border-radius: 3px;
+    }
+
+    img {
+      min-height: 350px;
+      min-width: 45%;
+      margin-left: 3rem;
+      border-radius: 3px;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 670px) {
+  .service-section-2 .service-board img {
+    display: none;
+  }
+}
+
+
